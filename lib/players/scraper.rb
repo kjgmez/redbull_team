@@ -16,11 +16,9 @@ class Scraper
       player = Player.new
       player.name = players.css('div.player_info div.name a').children.first.text
       player.position = players.css('div.player_info span.position').children.first.text
-      profile = players.css('div.player_info div.name a').attribute('href').value
-      #docs = Nokogiri::HTML (open("https://www.newyorkredbulls.com#{profile}"))
-      #bio = docs.css('div.player_info_alternate.section')
-      #player.age = bio.css("div.age").text.split("\n").join(' ')
-      #player.home = bio.css("div.hometown").text.split("\n").join(' ')
+      player.age = players.css('div.birthdate span.stat.age').text
+      player.height = players.css('div.stats_container span.stat.height').text
+      player.weight = players.css('div.stats_container span.stat.weight').text
       #binding.pry
     end
   end
