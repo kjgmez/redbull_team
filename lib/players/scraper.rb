@@ -12,4 +12,11 @@ class Scraper
       player.position = players.css('div.player_info span.position').children.first.text
       #binding.pry
     end
+# def print_players
+#   self.make_player
+#   Player.all.each  do |player|
+#     puts "name: #{player.name}"
+#     puts "position: #{player.position}"
+#   end
+# end
 end
