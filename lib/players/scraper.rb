@@ -1,3 +1,4 @@
+require_relative "../player.rb"
 class Scraper
   def get_page
     doc = Nokogiri::HTML (open("https://www.newyorkredbulls.com/players"))

@@ -1,3 +1,4 @@
+require_relative "../player.rb"
 class CLI
   def call
     message = ["Welcome to the Redbull Team line up!",
@@ -18,3 +19,5 @@ class CLI
     Player.all.each_with_index{|player, i| puts "#{i+1}. #{player.name}\n    Position: #{player.position}"}
   end
 end
+
+CLI.new.list_name
