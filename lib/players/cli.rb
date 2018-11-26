@@ -30,4 +30,4 @@ class CLI
   end
 end
 
-CLI.new.call
+# CLI.new.call
