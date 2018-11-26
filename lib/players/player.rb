@@ -1,5 +1,5 @@
 class Player
-  attr_accessor :name, :position
+  attr_accessor :name, :position, :stats, :history
   @@all = []
   def initialize
     self.class.all << self
