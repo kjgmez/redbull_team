@@ -1,7 +1,7 @@
 #require_relative "../player.rb"
-require_relative "./player.rb"
-require_relative "./scraper.rb"
-require 'pry'
+# require_relative "./player.rb"
+# require_relative "./scraper.rb"
+# require 'pry'
 
 class CLI
   def call
