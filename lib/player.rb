@@ -7,3 +7,4 @@ require_relative "players/player.rb"
 require_relative "players/scraper.rb"
 
 binding.pry
+puts "nothing"
