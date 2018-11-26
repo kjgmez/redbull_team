@@ -1,17 +1,10 @@
-#require_relative "../player.rb"
-# require_relative "./player.rb"
-# require_relative "./scraper.rb"
-# require 'pry'
-
 class CLI
   def call
     welcome
     list_name
     puts "Wich player would you like to know more about"
-    puts "Please select betwee 1 and #{Player.all.length}"
-    puts "To quit, type 'exit'."
-    input = Integer(gets) rescue nil
-    more_info(input)
+    ask_for_input
+    more_info until @input == "exit"
   end
   def welcome
     puts "Welcome to the Redbull Team line up!"
@@ -20,14 +13,24 @@ class CLI
     Player.all.each_with_index{|player, i| puts "#{i+1}. #{player.name}"}
     #binding.pry
   end
-  def more_info(input)
-    if input != nil && 0 < input && input < Player.all.length
-      #binding.pry
-      puts "Player info is as follows:\n Position: #{Player.all[input.to_i - 1].position}\n Age: #{Player.all[input.to_i - 1].age}\n Height: #{Player.all[input.to_i - 1].height}"
-    else
+  def ask_for_input
+    puts "Please select between 1 and #{Player.all.length}"
+    puts "To quit, type 'exit'."
+    @input = gets.strip
+    @input == 'exit' ? goodbye : check_for_input
+  end
+  def goodbye
+    puts "Thanks for visiting the NYC Redbull Soccer team"
+  end
+  def check_for_input
+    until @input.match(/^(\d)+$/) && @input.to_i.between?(0, Player.all.length)
       puts "Please enter a valid number"
+      ask_for_input
     end
   end
+  def more_info
+    #binding.pry
+    player = Player.all[@input.to_i - 1]
+    puts "Player info is as follows:\n Position: #{player.position}\n Age: #{player.age}\n Height: #{player.height}"
+  end
 end
-
-# CLI.new.call
