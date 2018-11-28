@@ -5,7 +5,7 @@ require "redbull_team/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "redbull_team"
-  spec.version       = redbull_team::VERSION
+  spec.version       = RedbullTeam::VERSION
   spec.authors       = ["'Kevin J Gomez'"]
   spec.email         = ["'kjgmez1@gmail.com'"]
 
