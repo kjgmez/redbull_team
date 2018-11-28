@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "players/version"
+require "redbull_team/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "players"
-  spec.version       = Players::VERSION
+  spec.name          = "redbull_team"
+  spec.version       = redbull_team::VERSION
   spec.authors       = ["'Kevin J Gomez'"]
   spec.email         = ["'kjgmez1@gmail.com'"]
 
