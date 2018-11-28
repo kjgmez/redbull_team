@@ -4,10 +4,10 @@ class CLI
     list_name
     puts "Wich player would you like to know more about"
     ask_for_input
-    until @input == "exit"
+    until @input.strip == "exit"
       more_info
       ask_for_input
-    end 
+    end
   end
   def welcome
     puts "Welcome to the Redbull Team line up!"
