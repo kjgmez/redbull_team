@@ -1,3 +1,3 @@
-module Redbull
+module RedbullTeam
   VERSION = "0.1.0"
 end
