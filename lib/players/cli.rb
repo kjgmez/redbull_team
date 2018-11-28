@@ -4,7 +4,7 @@ class CLI
     list_name
     puts "Wich player would you like to know more about"
     ask_for_input
-    until @input.strip == "exit"
+    until @input == "exit"
       more_info
       ask_for_input
     end
@@ -19,14 +19,15 @@ class CLI
   def ask_for_input
     puts "Please select between 1 and #{Player.all.length}"
     puts "To quit, type 'exit'."
-    @input = gets.strip
+    @input = gets.downcase.strip
     @input == 'exit' ? goodbye : check_for_input
   end
   def goodbye
     puts "Thanks for visiting the NYC Redbull Soccer team"
+    exit
   end
   def check_for_input
-    until @input.match(/^(\d)+$/) && @input.to_i.between?(0, Player.all.length)
+    until @input.match(/^(\d)+$/) && @input.to_i.between?(0, Player.all.length) && @input != 'exit'
       puts "Please enter a valid number"
       ask_for_input
     end
