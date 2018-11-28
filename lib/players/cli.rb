@@ -33,7 +33,6 @@ class CLI
     end
   end
   def more_info
-    #binding.pry
     player = Player.all[@input.to_i - 1]
     puts "Player info is as follows:\n Position: #{player.position}\n Age: #{player.age}\n Height: #{player.height}"
   end
