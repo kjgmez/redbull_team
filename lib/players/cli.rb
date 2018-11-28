@@ -17,7 +17,7 @@ class CLI
     #binding.pry
   end
   def ask_for_input
-    puts "Please select between 1 and #{Player.all.length}"
+    puts "\nPlease select between 1 and #{Player.all.length}"
     puts "To quit, type 'exit'."
     @input = gets.downcase.strip
     @input == 'exit' ? goodbye : check_for_input
@@ -28,7 +28,7 @@ class CLI
   end
   def check_for_input
     until @input.match(/^(\d)+$/) && @input.to_i.between?(0, Player.all.length) && @input != 'exit'
-      puts "Please enter a valid number"
+      puts "\nThe input you have typed is not a number within range"
       ask_for_input
     end
   end

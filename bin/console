@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+#Speci fies code is in ruby
 
 require "bundler/setup"
 require "players"
